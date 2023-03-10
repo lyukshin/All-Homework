@@ -35,3 +35,6 @@ System.Console.WriteLine("Enter your number column");
 int n = Convert.ToInt32(Console.ReadLine());
 int [,] userArray = FillDoubleArray (m, n);
 ShowDoubleArray (userArray);
+
+
+///
