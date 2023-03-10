@@ -1,9 +1,14 @@
 ﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 //  и возвращает значение этого элемента или же указание, что такого элемента нет.
+
 // Например, задан массив:
+
 // 1 4 7 2
+
 // 5 9 2 3
+
 // 8 4 2 4
+
 // 17 -> такого числа в массиве нет
 
 int[,] FillMatrixWithRandom(int row, int column)
@@ -93,4 +98,31 @@ System.Console.Write("Введите кол-во строк: ");
 int row = Convert.ToInt32(Console.ReadLine());
 System.Console.Write("Введите кол-во столбцов: ");
 int column = Convert.ToInt32(Console.ReadLine());
-... (28 lines left)
+int[,] matrix = FillMatrixWithRandom(row, column);
+PrintMatrix(matrix);
+
+System.Console.WriteLine("Чтобы искать по индексу элемента, введите 1");
+System.Console.WriteLine("Чтобы искать по значению элемента, введите 2");
+int swit = Convert.ToInt32(Console.ReadLine());
+
+switch (swit)
+{
+  case 1:
+    System.Console.Write("Введите первый индекс: ");
+    int index1 = Convert.ToInt32(Console.ReadLine());
+    System.Console.Write("Введите второй индекс: ");
+    int index2 = Convert.ToInt32(Console.ReadLine());
+    SearchIndex(matrix, index1, index2);
+    break;
+  
+  case 2:
+    System.Console.Write("Введите число: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    SearchNumber(matrix, number);
+    break;
+  
+  default:
+    System.Console.WriteLine("Неверный ввод!");
+    System.Console.Write("Введите число 1 или 2");
+    break;
+}
